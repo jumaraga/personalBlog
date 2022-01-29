@@ -1,0 +1,12 @@
+.header {
+  background-color: #022c2e;
+  color: white;
+  padding: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=home.css.map */

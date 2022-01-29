@@ -1,0 +1,42 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  font-family: 'Lora', serif;
+  font-family: 'Varela', sans-serif;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+p{
+  font-size: 1.8rem;
+}
+.header{
+    background-color: #022c2e;
+    color: white;   
+    padding:24px ;
+    display: flex;
+    align-items: center;
+    font-family: 'Varela', sans-serif;
+    justify-content: space-between;    
+    font-size: x-large;
+}
+.titule{
+    font-size: 30px;
+    font-family: varela;
+    font-weight: bolder;
+}
+* {
+  box-sizing: border-box;
+}
+aside{
+  height: 100%;
+  overflow-y: scroll  ;
+}
+aside::-webkit-scrollbar{
+display: none;
+}
