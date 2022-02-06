@@ -1,5 +1,5 @@
 import Link from "next/link"
-import '../styles/frontpage.module.css'
+import '../styles/articule.module.css'
 import style  from  '../styles/articule.module.css'
 export function NavBar (){
     return(
@@ -12,7 +12,7 @@ export function NavBar (){
                 <Link  href="/" >
                     <p className={style.p}>Home</p>
                 </Link>
-                <span className={style.icon}>  </span>
+                {/* <span className={style.icon}>  </span> */}
                 <input type="text" className={style.input} /> 
             </header>
         </>

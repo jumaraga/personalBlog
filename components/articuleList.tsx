@@ -1,12 +1,6 @@
 import styles from '../styles/Home.module.css'
-    type props = {data :{
-        titulo:string,
-        imagen?:string,
-        resumen:string,
-        categoria:string,
-        texto:string
-    }[]}
-export function ArticuleList( {data} :props){
+import { Props } from '../logic/context'
+export function ArticuleList( {data} :Props){
 
     return(
 

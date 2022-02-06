@@ -14,20 +14,29 @@
 }
 .icon{
     background-image: url('../public/lupa.svg');
+    display: inline-block;
+    width: 30px;
+    height: 30px;
     background-repeat: no-repeat;
     background-size: cover;
-   
+    color: white;
 }
-.author{
-position: relative;
-    background: var(--white-color);
-    border-radius: 0.5rem;
-    border: 1px solid var(--border-color);
+.other{
+    margin-top: 12px;
+    margin-left:40px;
+}
+.author .titule{
+    display: block;
+    margin-bottom: 16px;
 }
 .authorImg{
     border-radius:50%;
     overflow: hidden;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 .container{
     display: flex;
+    margin-top: 16px;
 }

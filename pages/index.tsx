@@ -20,9 +20,9 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400;1,500;1,600&family=Varela&display=swap" rel="stylesheet"></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+      <NavBar  />
       <main >
-        <MainArticule  />
+        <MainArticule data={json} />
         <div className={styles.main}>
           <ArticuleList data={json} />
           <SideBar data={json}/>

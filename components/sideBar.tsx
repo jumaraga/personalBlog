@@ -2,23 +2,16 @@ import { type } from "os";
 import style from '../styles/articule.module.css'
 import React, { Children, JSXElementConstructor, ReactNode } from "react";
 import Link from "next/link"
-type Props = {
-    data: {
-        titulo: string,
-        imagen?: string,
-        resumen: string,
-        categoria: string,
-        texto: string
-    }[]
-}
+import { Props } from "../logic/context";
+import axios from "axios";
 
 export function SideBar({ data }: Props) {
     const author= 'hola'
     return (
         <aside>
             { author
-            ? <div className={style.author}>
-                <h3>Autor del articulo</h3>
+            ? <div className="author">
+                <h3 className={style.titule} >Autor del articulo</h3>
                 <div>
                     <div>
                         <a href="">
@@ -27,7 +20,7 @@ export function SideBar({ data }: Props) {
                                 <h4>Nombre del autor</h4>
                             </div>
                         </a>
-                        <p>Datos a agregar como universidad o trabajo</p>
+                        <p className={style.other}>Datos a agregar como universidad o trabajo</p>
                     </div>
                 </div>
             </div>
