@@ -13,7 +13,6 @@ export function NavBar (){
                     <p className={style.p}>Home</p>
                 </Link>
                 {/* <span className={style.icon}>  </span> */}
-                <input type="text" className={style.input} /> 
             </header>
         </>
     )   

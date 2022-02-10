@@ -183,20 +183,32 @@ background-image: url('../public/calendario.svg');
   border-radius: 8px;
 }
 .singlePost{
-  padding: 12px;
+  width: 810px;
+}
+.singleImg{
+  width:100%;
+  size: cover;
+  height: 300px;
+  border-radius: 4px 4px 0 0;
 }
 .singlePostPaddid{
   padding: 0 28px;
 }
-.singlerPost{
-  font-size: 3rem;
-  font-weight: bold;
+.singlePost{
+  border: #ecf0f3 1px solid ;
+  margin-right: 1rem;
+  margin-left: 100px;
+  margin-top: 15px;
+  border-radius: 0.5rem;
 }
 .singlePostDesc{
   font-size: 2rem;
   line-height: 25px;
   font-weight: 500;
   font-family: 'Lora', serif;
+}
+.SinglePostText{
+  padding: 32px 50px 0;
 }
 .singlePostDesc::first-letter{
   margin-left:24px ; 

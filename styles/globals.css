@@ -19,6 +19,7 @@ p{
 .author{
   position: relative;
   width: 80%;
+  margin-top: 16px;
   background: var(--white-color);
   border-radius: 0.5rem;
   border: 1px solid #ecf0f3;

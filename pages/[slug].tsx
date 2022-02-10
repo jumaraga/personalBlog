@@ -5,13 +5,15 @@ import { SinglePost } from "../components/singlePost";
 import json from './info.json'
 import axios from "axios";
 import { Props } from "../logic/context";
-export default function articule({ data }: Props) {
+import { db } from "../logic/context";
+import { Articule } from "../server/models";
+export default function articule({ articule }: any) {
     const info = json
     return (
         <>
             <NavBar />
             <div className={styles.main}>
-                <SinglePost />
+                <SinglePost data={articule} />
                 <SideBar data={info} />
             </div>
         </>
@@ -20,14 +22,14 @@ export default function articule({ data }: Props) {
 
 export async function getStaticPaths() {
     try {
+        const res = await fetch("http://localhost:3001/api/getArticule")
+        console.log(res)
+        const posts = await res.json()
 
+        console.log(posts, 'posts')
         return {
             paths: [
-                {
-                    params: {
-                        id: '1'
-                    }
-                }
+                { params: { slug: posts.data.slug } }
             ],
             fallback: true // false or 'blocking'
         };
@@ -37,14 +39,14 @@ export async function getStaticPaths() {
 
 }
 export async function getStaticProps() {
-    let res
-    fetch("http://localhost:3000/api/getArticule")
-        .then((res) => {
-            console.log(res)
-            res.json()
-        })
-        .then((data) => {
-            res = data
-        });
-    return { props: { res } }
+
+    try {
+        const res = await fetch("http://localhost:3001/api/getArticule")
+        const data = await res.json()
+        console.log(data)
+        return { props: { articule: data } }
+    } catch (e) {
+        console.log(e)
+    }
+
 }

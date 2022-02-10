@@ -7,7 +7,7 @@ import { SideBar } from '../components/sideBar'
 import json from './info.json'
 import { ArticuleList } from '../components/articuleList'
 import { MainArticule } from '../components/mainArticule'
-const Home: NextPage = () => {
+const Home: NextPage = ({ articule }: any) => {
 
   const info = json
   return (
@@ -20,12 +20,12 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400;1,500;1,600&family=Varela&display=swap" rel="stylesheet"></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar  />
+      <NavBar />
       <main >
-        <MainArticule data={json} />
+        <MainArticule data={articule} />
         <div className={styles.main}>
-          <ArticuleList data={json} />
-          <SideBar data={json}/>
+        <ArticuleList data={articule}></ArticuleList>
+        <SideBar data={articule} />
         </div>
       </main>
 
@@ -45,5 +45,16 @@ const Home: NextPage = () => {
     </>
   )
 }
+export async function getStaticProps() {
 
+    try {
+        const res = await fetch("http://localhost:3001/api/getArticule")
+        const data = await res.json()
+        console.log(data)
+        return { props: { articule: data } }
+    } catch (e) {
+        console.log(e)
+    }
+
+}
 export default Home

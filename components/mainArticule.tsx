@@ -9,14 +9,14 @@ import json from '../pages/info.json';
         fecha?:string
     }[]}
 
-export function MainArticule({data}:props){
+export function MainArticule({data}:any){
     return(
         <section className={style.mainArticule}>
             <div className={style.mainArtLeft} >
-                <h2 className={style.tituloP}>{data[0].titulo}</h2>
+                <h2 className={style.tituloP}>{data[0]?.title}</h2>
                 <p>resumenPersonaliza el scroll de tu web sólo con CSS</p>
-                <p><span className={style.tag}></span> {data[0].categoria}</p>
-                <p><span className={style.fecha}></span> {data[0].fecha}</p>
+                <p><span className={style.tag}></span> {data[0]?.description}</p>
+                <p><span className={style.fecha}></span> {data[0]?.description}</p>
                 <div className={style.social}>
                     
                 </div>
