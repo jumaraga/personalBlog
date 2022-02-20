@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { connect } from 'mongoose'
 import { Articule } from '../../server/models'
+import { NextApiHandler } from 'next'
 type Data = {
   title?: String
   name: string
@@ -9,10 +10,10 @@ type Data = {
 
 
 
-export default async function handler(
+export default  const handler:NextApiHandler=async(
   req: NextApiRequest,
   res: NextApiResponse
-) {
+)=> {
   const mongo=() => {
     
     connect(`${process.env.DB}`)

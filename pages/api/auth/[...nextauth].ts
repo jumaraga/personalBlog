@@ -10,7 +10,9 @@ const options: NextAuthOptions = {
     },
     debug: true,
     session: {},
-    jwt: {},
+    jwt: {
+        secret:process.env.JWT_SECRET
+    },
     providers: [
         CredentialsProvider({
             // The name to display on the sign in form (e.g. 'Sign in with...')
@@ -30,12 +32,13 @@ const options: NextAuthOptions = {
                 // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
                 // You can also use the `req` object to obtain additional parameters
                 // (i.e., the request IP address)
-                const res = await fetch("/your/endpoint", {
+                const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/DR`, {
                     method: 'POST',
                     body: JSON.stringify(credentials),
                     headers: { "Content-Type": "application/json" }
                 })
                 const user = await res.json()
+
 
                 // If no error and we have user data, return it
                 if (res.ok && user) {
@@ -45,6 +48,6 @@ const options: NextAuthOptions = {
                 return null
             }
         })
-    ]
+    ],
 }
 export default NextAuth(options)

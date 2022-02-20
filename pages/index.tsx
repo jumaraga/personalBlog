@@ -50,7 +50,6 @@ export async function getStaticProps() {
     try {
         const res = await fetch("http://localhost:3001/api/getArticule")
         const data = await res.json()
-        console.log(data)
         return { props: { articule: data } }
     } catch (e) {
         console.log(e)

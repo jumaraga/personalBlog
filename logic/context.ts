@@ -26,3 +26,8 @@ export type Props = {
         texto: string
     }[]
 }
+export type User ={
+    name:  String,
+    email: String,
+    img: String
+}

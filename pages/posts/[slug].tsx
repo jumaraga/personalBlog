@@ -1,12 +1,12 @@
-import { NavBar } from "../components/navBar"
-import { SideBar } from "../components/sideBar"
+import { NavBar } from "../../components/navBar"
+import { SideBar } from "../../components/sideBar"
 import styles from '../styles/Home.module.css'
-import { SinglePost } from "../components/singlePost";
-import json from './info.json'
+import { SinglePost } from "../../components/singlePost";
+import json from '../info.json'
 import axios from "axios";
-import { Props } from "../logic/context";
-import { db } from "../logic/context";
-import { Articule } from "../server/models";
+import { Props } from "../../logic/context";
+import { db } from "../../logic/context";
+import { Articule } from "../../server/models";
 export default function articule({ articule }: any) {
     const info = json
     return (
