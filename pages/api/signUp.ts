@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { connect } from 'mongoose'
 import { User } from "../../server/userModel";
 import { delBasePath } from "next/dist/shared/lib/router/router";
-export default function signIn(req: NextApiRequest, res: NextApiResponse) {
+export default async function  signIn (req: NextApiRequest, res: NextApiResponse) {
     const mongo = () => {
 
         connect(`${process.env.DB}`)

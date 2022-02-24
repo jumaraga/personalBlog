@@ -106,10 +106,13 @@ display: none;
 .writeInput:focus {
   outline: none;
 }
-
+.writeDesc{
+  font-size: 20px;
+  height:20vh
+}
 .writeText {
   font-size: 20px;
-  height: 100vh;
+  height: 80vh;
 }
 
 .writeSubmit {

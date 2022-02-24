@@ -1,6 +1,6 @@
 import mon, { model, models, Schema, SchemaTypes } from "mongoose";
 import slugify from "slugify";
-
+import { User } from "./userModel";
 const articule = new Schema({
     title: {
         type: String,
@@ -22,8 +22,9 @@ const articule = new Schema({
         required: true,
         unique: true
     },
-    author:{
-        type:String,
+    userID:{
+        type:SchemaTypes.ObjectId,
+        ref:User.modelName,
         required:true
     }
 })

@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css'
 import { Props } from '../logic/context'
 import Link from 'next/link'
 export function ArticuleList({ data }:any) {
-    console.log(data)
     return (
 
         <div className={styles.grid}>
