@@ -12,7 +12,12 @@ export default async function handler(
     }
     mongo();
     try {
-        const data = await Articule.findOne({ slug: 'hello' })
+        // const data = req.body
+        const data = await
+            Articule
+                .findOne({ slug: req.body })
+                .populate('userID')
+                .exec()
         const hola = JSON.stringify(data)
         return res.status(200).json({ data })
     } catch (e) {

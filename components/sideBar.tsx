@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Props } from "../logic/context";
 import axios from "axios";
 
-export function SideBar({ data }: Props) {
+export function SideBar({ data }:any) {
     const author = 'hola'
     return (
         <aside>
@@ -17,7 +17,7 @@ export function SideBar({ data }: Props) {
                             <a href="">
                                 <div className={style.container}>
                                     <img className={style.authorImg} src="https://yt3.ggpht.com/yti/APfAmoGZItNF9fgEgNvORz8D3-nWdou28yIyOipx8A=s88-c-k-c0x00ffffff-no-rj-mo" alt="" />
-                                    <h4>Nombre del autor</h4>
+                                    <h4>{ data?.data?.userID.name} {data.data.userID.lastname}</h4>
                                 </div>
                             </a>
                             <p className={style.other}>Datos a agregar como universidad o trabajo</p>

@@ -35,9 +35,14 @@ export default function Write() {
         }
         try {
             const res = await axios.post("/api/guardar", newPost);
-            console.log(res)
-            window.location.replace("/" + res.data._id);
-        } catch (err) { }
+            // if(res){
+
+            // }
+            console.log(res, 'response from newPOst')
+            window.location.replace("/" + 'posts/' +  res.data.savedArticule?.slug  );
+        } catch (err) {
+            console.log(e)
+         }
     };
 
     if (status === 'loading') {

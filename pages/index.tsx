@@ -48,7 +48,7 @@ const Home: NextPage = ({ articule }: any) => {
 export async function getStaticProps() {
 
     try {
-        const res = await fetch("http://localhost:3001/api/getArticule")
+        const res = await fetch("http://localhost:3001/api/darArticulos")
         const data = await res.json()
 
         return { props: { articule: data } }

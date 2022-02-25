@@ -13,14 +13,14 @@ export default async function handler(
     }
     mongo();
     try {
-       const data =  await 
-        Articule.find()
-        .populate('userID')
-        .exec()
+        const data = await
+            Articule.find()
+                .populate('userID')
+                .exec()
         const hola = JSON.stringify(data)
-        return res.status(200).json(data)
+        return res.status(200).json({ data })
     } catch (e) {
         console.log(e)
-        res.status(400).json({  e })
+        res.status(400).json({ e })
     }
 }
