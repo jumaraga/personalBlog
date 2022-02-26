@@ -1,12 +1,17 @@
 import type { NextApiHandler, NextApiRequest, } from 'next'
 import { NextApiResponse } from 'next'
 import { User } from '../../../server/userModel'
+import {connect} from 'mongoose'
  type hola={
     email: string,
     
  }
 const credentialsAuth: NextApiHandler<hola> = async (req: NextApiRequest, res: NextApiResponse) => {
     // POST ok
+    const mongo = () => {
+        connect(`${process.env.DB}`)
+    }
+    mongo();
     if (req.method !== 'POST') {
         res.status(200).end()
     }
